@@ -5,12 +5,6 @@ import numpy as np
 from PIL import Image
 import base64
 
-# Add custom CSS styles
-st.markdown("""
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
-    </style>
-""", unsafe_allow_html=True)
 
 # Title
 st.markdown("<h1 style='text-align: center; color:#3E3F3A; font-size:50px; font-family: Poppins, sans-serif;'>HEART DISEASE PREDICTION WEBAPP</h1>", unsafe_allow_html=True)
