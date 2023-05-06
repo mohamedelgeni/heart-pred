@@ -8,11 +8,8 @@ import base64
 st.markdown("<h1 style='text-align: center; color:#42D1C6; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color:#HEX: #d5e1df; font-size:25px;'>This web app aims to help you find out whether you are at risk of developing a heart disease or not.</p>", unsafe_allow_html=True)
 
-@st.cache(allow_output_mutation=True)
-def load_model():
-    return pickle.load(open('pipe.pkl', 'rb'))
+heart_model = pickle.load(open('pipe.pkl', 'rb'))
 
-heart_model = load_model()
 
 def main():
     # Getting the input data from the user
@@ -37,16 +34,16 @@ def main():
     # Code for prediction
     diagnosis = ''
     
-    input_data = [[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]]
-    heart_pred = heart_model.predict(input_data)
-    
-    if st.button("Predict"):    
+    heart_pred = heart_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
+
+    if st.button("Predict"):
         if heart_pred[0] == 1:
-            st.error('Warning! You have high risk of getting a heart attack!')
+            st.error('Warning! You have a high risk of getting a heart attack!')
             st.write(f"Model Prediction: {heart_pred[0]} (1 = Heart disease present, 0 = No heart disease)")
         else:
-            st.success('You have lower risk of getting a heart disease!')
+            st.success('You have a lower risk of getting a heart disease!')
             st.write(f"Model Prediction: {heart_pred[0]} (1 = Heart disease present, 0 = No heart disease)")
-          
+
 if __name__ == '__main__':
     main()
+
