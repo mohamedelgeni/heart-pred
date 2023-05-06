@@ -5,10 +5,17 @@ import numpy as np
 from PIL import Image
 import base64
 
-st.markdown("<h1 style='text-align: center; color:#2980B9; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color:#707B7C; font-size:20px;'>This web app aims to help you find out whether you are at risk of developing a heart disease or not</p>", unsafe_allow_html=True)
+# Add custom CSS styles
+st.markdown("""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
+""", unsafe_allow_html=True)
 
-# Age input
+# Title
+st.markdown("<h1 style='text-align: center; color:#2980B9; font-size:50px; font-family: Roboto;'>HEART DISEASE PREDICTION WEBAPP</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color:#707B7C; font-size:20px; font-family: Roboto;'>This web app aims to help you find out whether you are at risk of developing a heart disease or not</p>", unsafe_allow_html=True)
+
 
 heart_model = pickle.load(open('pipe.pkl', 'rb'))
 
