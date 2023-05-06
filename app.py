@@ -16,20 +16,20 @@ def main():
     st.write('### Input Parameters')
     col1, col2, col3 = st.columns(3)
     with col1:
-        age = st.slider("AGE", 11, 81, 23)
-        trestbps = st.slider("RESTING B.P.", 100, 400, 110)
+        age = st.number_input("AGE", min_value=1, max_value=120, step=1, value=23)
+        trestbps = st.number_input("RESTING B.P.", min_value=50, max_value=250, step=1, value=110)
         restecg = st.selectbox("RESTING ECG", ["Normal", "ST-T wave abnormality", "Left ventricular hypertrophy"])
-        oldpeak = st.slider("ST DEPRESSION INDUCED", 0.0, 5.0, 0.5)
+        oldpeak = st.number_input("ST DEPRESSION INDUCED", min_value=0.0, max_value=10.0, step=0.1, value=0.5)
     with col2:
         sex = st.radio("GENDER", ["Male", "Female"])
-        chol = st.slider("CHOLESTEROL", 100, 400, 110)
-        thalach = st.slider("MAX. HEART BEAT ACHIEVED", 100, 200, 110)
+        chol = st.number_input("CHOLESTEROL", min_value=50, max_value=600, step=1, value=200)
+        thalach = st.number_input("MAX. HEART BEAT ACHIEVED", min_value=50, max_value=250, step=1, value=150)
         slope = st.selectbox("SLOPE OF THE PEAK EXERCISE ST SEGMENT", ["Upsloping", "Flatsloping", "Downsloping"])
     with col3:
         cp = st.selectbox("CHEST PAIN", ["Typical angina", "Atypical angina", "Non-anginal pain", "Asymptotic"])
-        fbs = st.radio("FASTING BLOOD SUGAR", ["<120 mg/dl", ">120 mg/dl"])
-        exang = st.radio("EXERCISE INDUCED ANGINA", ["No", "Yes"])
-        ca = st.slider("NUMBER OF VESSELS COLORED BY FLUOROSCOPY", 0, 3, 1)
+        fbs = st.selectbox("FASTING BLOOD SUGAR", ["<120 mg/dl", ">120 mg/dl"])
+        exang = st.selectbox("EXERCISE INDUCED ANGINA", ["No", "Yes"])
+        ca = st.number_input("NUMBER OF VESSELS COLORED BY FLUOROSCOPY", min_value=0, max_value=3, step=1, value=1)
     
     thal = st.selectbox("THALASSEMIA", ["Normal", "Fixed defect", "Reversible defect"])
     
