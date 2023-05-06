@@ -30,9 +30,11 @@ def main():
         fbs = st.selectbox("FASTING BLOOD SUGAR", ["<120 mg/dl", ">120 mg/dl"])
         exang = st.selectbox("EXERCISE INDUCED ANGINA", ["No", "Yes"])
         ca = st.number_input("NUMBER OF VESSELS COLORED BY FLUOROSCOPY", min_value=0, max_value=3, step=1, value=1)
-        
+    
+    thal = st.selectbox("THALASSEMIA", ["Normal", "Fixed defect", "Reversible defect"])
+    
     # Code for prediction
-    heart_pred = heart_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca]])
+    heart_pred = heart_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
     
     if st.button("Predict"):
         if heart_pred[0] == 1:
