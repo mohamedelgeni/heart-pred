@@ -6,7 +6,7 @@ from PIL import Image
 import base64
 
 st.markdown("<h1 style='text-align: center; color:#42D1C6; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color:#HEX: #d5e1df; font-size:25px;'>This web app aims to help you find out whether you are at risk of developing a heart disease or not.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color:#HEX: #d5e1df; font-size:25px;'>HeartCheck: Assess Your Heart Disease Risk in Minutes with our Web App</p>", unsafe_allow_html=True)
 
 heart_model = pickle.load(open('pipe.pkl', 'rb'))
 
