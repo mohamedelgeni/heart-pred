@@ -38,7 +38,6 @@ def main():
     # code for Prediction
     diagnosis = ''
     
-    heart_pred = heart_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
 
     
     if st.button("Predict"):
