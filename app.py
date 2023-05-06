@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 import base64
 
-st.markdown("<h1 style='text-align: center; color:#42D1C6; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP💗🩹</h1>",unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color:#42D1C6; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP</h1>",unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color:#HEX: #d5e1df; font-size:25px;'>This web app aims to help you find out whether you are at a risk of developing a heart disease or not.</p>", unsafe_allow_html=True)
 
 
