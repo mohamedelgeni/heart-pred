@@ -1,5 +1,9 @@
 import streamlit as st
 import pickle
+import pandas as pd
+import numpy as np
+from PIL import Image
+import base64
 
 # Setting the page title and layout
 st.set_page_config(page_title='Heart Disease Prediction', layout='wide')
