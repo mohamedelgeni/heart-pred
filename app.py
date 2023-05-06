@@ -9,6 +9,22 @@ import base64
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+    /* Animation keyframes */
+    @keyframes fade-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    /* Apply animation to title */
+    .title {
+        animation: fade-in 1s ease-in-out;
+    }
+
+    /* Apply animation to text */
+    .text {
+        animation: fade-in 1s ease-in-out;
+    }
     </style>
 """, unsafe_allow_html=True)
 
