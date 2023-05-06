@@ -34,7 +34,6 @@ def main():
     thal = st.selectbox("THALASSEMIA", ["Normal", "Fixed defect", "Reversible defect"])
     
     # Code for prediction
-    heart_pred = heart_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
     
     if st.button("Predict"):
         if heart_pred[0] == 1:
