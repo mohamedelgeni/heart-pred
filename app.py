@@ -8,7 +8,7 @@ import base64
 
 # Title
 st.markdown("<h1 style='text-align: center; color:#3E3F3A; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color:#6C757D; font-size:20px;'>This web app aims to help you determine your risk of developing heart disease.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color:#6C757D; font-size:20px;'>HeartCheck: Assess Your Heart Disease Risk in Minutes with our Web App</p>", unsafe_allow_html=True)
 
 
 heart_model = pickle.load(open('pipe.pkl', 'rb'))
