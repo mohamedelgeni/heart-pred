@@ -12,8 +12,8 @@ st.markdown("<h1 style='text-align: center; color:#1E8449; font-size:50px;'>HEAR
 st.markdown("<p style='text-align: center; color:#707B7C; font-size:20px;'>This web app aims to help you find out whether you are at risk of developing a heart disease or not</p>", unsafe_allow_html=True)
 
 def main():
+    
     # Getting the input data from the user
-    st.write('### Input Parameters')
     col1, col2, col3 = st.columns(3)
     with col1:
         age = st.number_input("AGE", min_value=1, max_value=120, step=1, value=23)
@@ -31,13 +31,14 @@ def main():
         exang = st.selectbox("EXERCISE INDUCED ANGINA", ["No", "Yes"])
         ca = st.number_input("NUMBER OF VESSELS COLORED BY FLUOROSCOPY", min_value=0, max_value=3, step=1, value=1)
     
-    thal = st.selectbox("THALASSEMIA", ["Normal", "Fixed defect", "Reversible defect"])
+        thal = st.selectbox("THALASSEMIA", ["Normal", "Fixed defect", "Reversible defect"])
     
     # Code for prediction
     
     # code for Prediction
     diagnosis = ''
     
+    heart_pred = heart_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
 
     
     if st.button("Predict"):
