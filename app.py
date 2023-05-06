@@ -16,9 +16,9 @@ def main():
     # getting the input data from the user
     col1, col2, col3 = st.columns(3)
     with col1:
-         age = st.sidebar.slider("AGE", 21, 81, 23)
+         age = st.number_input("AGE", 21, 81, 23)
     with col2:
-         sex = st.sidebar.radio("GENDER (1=Male, 0=Female)", ["1", "0"])
+         sex = st.number_input("GENDER (1=Male, 0=Female)", ["1", "0"])
     with col3:   
         cp = st.sidebar.selectbox(
         "CHEST PAIN (0=Typical angina, 1=Atypical angina, 2=Non—anginal pain, 3=Asymptotic)", ["0", "1", "2", "3"])
