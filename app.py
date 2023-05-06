@@ -1,7 +1,23 @@
 import streamlit as st
 import pickle
+import pandas as pd
+import numpy as np
+from PIL import Image
+import base64
 
-# Rest of your code...
+st.markdown("<h1 style='text-align: center; color:#42D1C6; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP💗🩹</h1>",unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color:#HEX: #d5e1df; font-size:25px;'>This web app aims to help you find out whether you are at a risk of developing a heart disease or not.</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p style='font-size:20px;'>Please select the required fields below!</p>",unsafe_allow_html=True)
+
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.write(' ')
+with col2:
+    st.image("http://media.giphy.com/media/zXV7D35X56RQk/giphy.gif", width=270)
+with col3:
+    st.write(' ')
+
+heart_model = pickle.load(open('pipe.pkl','rb'))
 
 def main():
     # getting the input data from the user
@@ -33,6 +49,20 @@ def main():
         thal = st.sidebar.radio("THALASSEMIA (0 = normal; 1 = fixed defect; 2 = reversible defect)",["0", "1", "2"])
 
     # Rest of your code...
+    # code for Prediction
+    diagnosis = ''
+    
+    # creating a button for Prediction
+    heart_pred = heart_model.predict([[age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]])
 
+    if st.button("Predict"):    
+        if heart_pred[0] == 1:
+            st.error('Warning! You have high risk of getting a heart attack!')
+            st.write(f"Model Prediction: {heart_pred[0]} (1 = Heart disease present, 0 = No heart disease)")
+        else:
+            st.success('You have lower risk of getting a heart disease!')
+            st.write(f"Model Prediction: {heart_pred[0]} (1 = Heart disease present, 0 = No heart disease)")
+          
 if __name__ == '__main__':
     main()
+    
