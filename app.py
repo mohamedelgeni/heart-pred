@@ -44,5 +44,5 @@ def main():
                 st.success('You have lower risk of getting a heart disease!')
                 st.write(f"Model Prediction: {heart_pred[0]} (1 = Heart disease present, 0 = No heart disease)")
           
-    if __name__ == '__main__':
-        main()
+if __name__ == '__main__':
+    main()
