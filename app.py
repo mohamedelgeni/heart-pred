@@ -35,6 +35,12 @@ def main():
     
     # Code for prediction
     
+    # code for Prediction
+    diagnosis = ''
+    
+    heart_pred = heart_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
+
+    
     if st.button("Predict"):
         if heart_pred[0] == 1:
             st.error('Warning! You have a high risk of getting a heart attack!')
