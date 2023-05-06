@@ -1,16 +1,15 @@
 import streamlit as st
 import pickle
+import pandas as pd
+import numpy as np
+from PIL import Image
+import base64
 
-# Setting the page title and layout
-st.set_page_config(page_title='Heart Disease Prediction', layout='wide')
+st.markdown("<h1 style='text-align: center; color:#42D1C6; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP</h1>",unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color:#HEX: #d5e1df; font-size:25px;'>This web app aims to help you find out whether you are at a risk of developing a heart disease or not.</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p style='font-size:20px;'>Please select the required fields below!</p>",unsafe_allow_html=True)
 
-# Loading the trained model
-heart_model = pickle.load(open('pipe.pkl', 'rb'))
-
-# Page title and description
-st.markdown("<h1 style='text-align: center; color:#1E8449; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color:#707B7C; font-size:20px;'>This web app aims to help you find out whether you are at risk of developing a heart disease or not</p>", unsafe_allow_html=True)
-
+heart_model = pickle.load(open('pipe.pkl','rb'))
 def main():
     
     # Getting the input data from the user
