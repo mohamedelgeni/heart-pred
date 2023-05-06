@@ -16,7 +16,7 @@ def main():
     # getting the input data from the user
     col1, col2, col3 = st.columns(3)
     with col1:
-         age = st.number_input("AGE", 21, 81, 23)
+         age = st.number_input("AGE", min_value=1, max_value=120, step=1, value=23)
     with col2:
          sex = st.sidebar.radio("GENDER (1=Male, 0=Female)", ["1", "0"])
     with col3:   
