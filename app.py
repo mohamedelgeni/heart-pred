@@ -30,10 +30,24 @@ def main():
         exang = st.selectbox("EXERCISE INDUCED ANGINA", ["No", "Yes"])
         ca = st.number_input("NUMBER OF VESSELS COLORED BY FLUOROSCOPY", min_value=0, max_value=3, step=1, value=1)
         thal = st.selectbox("THALASSEMIA", ["Normal", "Fixed defect", "Reversible defect"])
-    
+
     # Code for prediction
     diagnosis = ''
-    
+
+    # Map selected categorical values to numerical values
+    sex = 1 if sex == "Male" else 0
+    cp_mapping = {"Typical angina": 0, "Atypical angina": 1, "Non-anginal pain": 2, "Asymptotic": 3}
+    cp = cp_mapping[cp]
+    restecg_mapping = {"Normal": 0, "ST-T wave abnormality": 1, "Left ventricular hypertrophy": 2}
+    restecg = restecg_mapping[restecg]
+    # Code for prediction (continued)
+    fbs = 1 if fbs == ">120 mg/dl" else 0
+    exang = 1 if exang == "Yes" else 0
+    slope_mapping = {"Upsloping": 0, "Flatsloping": 1, "Downsloping": 2}
+    slope = slope_mapping[slope]
+    thal_mapping = {"Normal": 0, "Fixed defect": 1, "Reversible defect": 2}
+    thal = thal_mapping[thal]
+
     heart_pred = heart_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
 
     if st.button("Predict"):
@@ -44,6 +58,6 @@ def main():
             st.success('You have a lower risk of getting a heart disease!')
             st.write(f"Model Prediction: {heart_pred[0]} (1 = Heart disease present, 0 = No heart disease)")
 
+
 if __name__ == '__main__':
     main()
-
