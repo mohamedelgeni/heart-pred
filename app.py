@@ -38,18 +38,18 @@ def main():
         thal = st.selectbox("THALASSEMIA", ["Normal", "Fixed defect", "Reversible defect"])
     
     # code for Prediction
-    diagnosis = ''
+diagnosis = ''
     
     # creating a button for Prediction
-    heart_pred = heart_model.predict([[age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]])
+heart_pred = heart_model.predict([[age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]])
 
-    if st.button("Predict"):    
-        if heart_pred[0] == 1:
-            st.error('Warning! You have high risk of getting a heart attack!')
-            st.write(f"Model Prediction: {heart_pred[0]} (1 = Heart disease present, 0 = No heart disease)")
-        else:
-            st.success('You have lower risk of getting a heart disease!')
-            st.write(f"Model Prediction: {heart_pred[0]} (1 = Heart disease present, 0 = No heart disease)")
+if st.button("Predict"):    
+    if heart_pred[0] == 1:
+        st.error('Warning! You have high risk of getting a heart attack!')
+        st.write(f"Model Prediction: {heart_pred[0]} (1 = Heart disease present, 0 = No heart disease)")
+    else:
+        st.success('You have lower risk of getting a heart disease!')
+        st.write(f"Model Prediction: {heart_pred[0]} (1 = Heart disease present, 0 = No heart disease)")
           
 if __name__ == '__main__':
     main()
