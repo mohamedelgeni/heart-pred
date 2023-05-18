@@ -14,7 +14,7 @@ heart_model = pickle.load(open('pipe.pkl', 'rb'))
 
 def main():
     # Getting the input data from the user
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     with col1:
         age = st.number_input("AGE", min_value=1, max_value=120, step=1, value=23)
         trestbps = st.number_input("RESTING B.P.", min_value=50, max_value=250, step=1, value=110)
