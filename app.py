@@ -62,7 +62,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-st.text('Created by maha Elgendy')
+st.text('Created by Mohamed Elgendy')
 
 
 
