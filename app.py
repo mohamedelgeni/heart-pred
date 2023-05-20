@@ -3,14 +3,9 @@ import pickle
 import pandas as pd
 import numpy as np
 
-
-# Title
 st.markdown("<h1 style='text-align: center; color:#3E3F3A; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP.</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color:#6C757D; font-size:20px;'>HeartCheck: Assess Your Heart Disease Risk in Minutes with our Web App</p>", unsafe_allow_html=True)
-
 
 heart_model = pickle.load(open('pipe.pkl', 'rb'))
-
 
 def main():
     # Getting the input data from the user
@@ -59,10 +54,6 @@ def main():
             st.success('You have a lower risk of getting a heart disease!')
             st.write(f"Model Prediction: {heart_pred[0]} (1 = Heart disease present, 0 = No heart disease)")
 
-
 if __name__ == '__main__':
     main()
 st.text('Created by Mohamed Elgendy')
-
-
-
