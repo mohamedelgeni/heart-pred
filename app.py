@@ -3,12 +3,11 @@ import pickle
 import pandas as pd
 import numpy as np
 
-st.markdown("<h1 style='text-align: center; color:#3E3F3A; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP.</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color:#3E3F3A; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP</h1>", unsafe_allow_html=True)
 
 heart_model = pickle.load(open('pipe.pkl', 'rb'))
 
 def main():
-    # Getting the input data from the user
     col1, col2, col3 = st.columns(3)
     with col1:
         age = st.number_input("AGE", min_value=1, max_value=120, step=1, value=23)
@@ -27,16 +26,13 @@ def main():
         ca = st.number_input("NUMBER OF VESSELS COLORED BY FLUOROSCOPY", min_value=0, max_value=3, step=1, value=1)
         thal = st.selectbox("THALASSEMIA", ["Normal", "Fixed defect", "Reversible defect"])
 
-    # Code for prediction
     diagnosis = ''
-
-    # Map selected categorical values to numerical values
+    
     sex = 1 if sex == "Male" else 0
     cp_mapping = {"Typical angina": 0, "Atypical angina": 1, "Non-anginal pain": 2, "Asymptotic": 3}
     cp = cp_mapping[cp]
     restecg_mapping = {"Normal": 0, "ST-T wave abnormality": 1, "Left ventricular hypertrophy": 2}
     restecg = restecg_mapping[restecg]
-    # Code for prediction (continued)
     fbs = 1 if fbs == ">120 mg/dl" else 0
     exang = 1 if exang == "Yes" else 0
     slope_mapping = {"Upsloping": 0, "Flatsloping": 1, "Downsloping": 2}
