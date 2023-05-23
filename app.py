@@ -25,8 +25,6 @@ def main():
         exang = st.selectbox("EXERCISE INDUCED ANGINA", ["No", "Yes"])
         ca = st.number_input("NUMBER OF VESSELS COLORED BY FLUOROSCOPY", min_value=0, max_value=3, step=1, value=1)
         thal = st.selectbox("THALASSEMIA", ["Normal", "Fixed defect", "Reversible defect"])
-
-    diagnosis = ''
     
     sex = 1 if sex == "Male" else 0
     cp_mapping = {"Typical angina": 0, "Atypical angina": 1, "Non-anginal pain": 2, "Asymptotic": 3}
