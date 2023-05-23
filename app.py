@@ -46,6 +46,5 @@ def main():
         else:
             st.success('You have a lower risk of getting a heart disease!')
 
-if __name__ == '__main__':
     main()
 st.text('Created by Mohamed Elgendy')
