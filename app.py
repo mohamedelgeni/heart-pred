@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import numpy as np
 
-st.markdown("<h1 style='text-align: center; color:#3E3F3A; font-size:50px;'>HEART DISEASE PREDICTION WEBAPP</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color:#3E3F3A; font-size:50px;'>HEART DISEASE PREDICTION</h1>", unsafe_allow_html=True)
 
 heart_model = pickle.load(open('pipe.pkl', 'rb'))
 
