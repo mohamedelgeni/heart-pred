@@ -45,6 +45,5 @@ def main():
             st.error('Warning! You have a high risk of getting a heart attack!')
         else:
             st.success('You have a lower risk of getting a heart disease!')
-
-    main()
+main()
 st.text('Created by Mohamed Elgendy')
